@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order List</title>
+</head>
+<body>
+    <h1>All Orders</h1>
+    <table>
+        <tr>
+            <th>Pizza Type</th>
+            <th>Comments</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.pizza_type }}</td>
+            <td>{{ order.comments }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
