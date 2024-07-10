@@ -46,11 +46,11 @@ All you need is Docker container or a Virtual Machine environment, and Kubernete
 * Ensure the application is scalable and can handle multiple instances.
 
 ## Deployment local with minikube:
-to run this locally, make sure that you have mikube installed and running, then execute the following commands:
+to run this locally, make sure that you have mikube installed and running, then execute the following commands:  
 start the minube cluster:
 `minikube start`
 execute the deployment and service using the public registry </br>
-- `cd .k8s`
-- `kubectl apply -f deployment.yaml`
-- `kubectl apply -f service.yaml`
+- `kubectl apply -f .k8s/deployment.yaml`
+- `kubectl apply -f .k8s/service.yaml`
+- `kubectl apply -f .k8s/hpa.yaml`
 - `minikube service mypizza-service`
