@@ -41,3 +41,13 @@ It is used in this project, to handle all routes, rendering pages and managing d
 1. Containerization: Containerize the web application using Docker. Provide a Dockerfile in your repository.
 2. Kubernetes Deployment: Deploy your application to Kubernetes. Should include the necessary Deployments, Services, and any other resources needed to make the application accessible.
 * Ensure the application is scalable and can handle multiple instances.
+
+## Deployment local with minikube
+to run this locally, make sure that you have mikube installed and running, then execute the following commands:
+start the minube cluster:
+`minikube start`
+execute the deployment and service using the public registry
+`cd .k8s`
+`kubectl apply -f deployment.yaml`
+`kubectl apply -f service.yaml`
+`minikube service mypizza-service`
