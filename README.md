@@ -30,7 +30,17 @@ All you need is Docker container or a Virtual Machine environment, and Kubernete
 2. Kubernetes Deployment: Deploy your application to Kubernetes. Should include the necessary Deployments, Services, and any other resources needed to make the application accessible.
 * Ensure the application is scalable and can handle multiple instances.
 
-## Deployment with minikube:
+
+## Deployment in sandbox killercoda:
+go to https://killercoda.com/playgrounds/scenario/kubernetes and open a new sanbox
+get the project from github
+- `git clone https://github.com/k4mus/mypizza.git`
+- `cd mypizza/.k8s`
+- `kubectl apply -f .`
+- `kubectl get svc`
+then, take the port the service `mypizza` and use for access to the app from the menu `Traffic / Port`.
+
+## Deployment in local with minikube:
 get the project from github
 - `git clone https://github.com/k4mus/mypizza.git`
 
@@ -41,7 +51,7 @@ execute the deployment and service using the public registry </br>
 - `kubectl apply -f .k8s/deployment.yaml`
 - `kubectl apply -f .k8s/service.yaml`
 - `kubectl apply -f .k8s/hpa.yaml`
-- `minikube service mypizza-service`
+- `minikube service mypizza`
 
 
 ## local execution without k8s and docker.
