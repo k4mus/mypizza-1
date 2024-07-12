@@ -4,12 +4,18 @@ from .models import Order
 from .forms import OrderForm
 
 class OrderModelTest(TestCase):
+    """
+    Test case to validate the order model creation passing the pizza_type and comments value
+    """
     def test_order_creation(self):
         order = Order.objects.create(pizza_type='Margherita', comments='Extra cheese')
         self.assertEqual(order.pizza_type, 'Margherita')
         self.assertEqual(order.comments, 'Extra cheese')
 
 class OrderViewTest(TestCase):
+    """
+    Test case to validate the order view and the order view, the order_list view and the order submission.
+    """
     def test_place_order_view(self):
         response = self.client.get(reverse('place_order'))
         self.assertEqual(response.status_code, 200)
@@ -35,6 +41,9 @@ class OrderViewTest(TestCase):
         self.assertEqual(Order.objects.first().comments, 'Gluten-free base')
 
 class OrderFormTest(TestCase):
+    """
+    Test case to validate the order form presentation
+    """
     def test_valid_form(self):
         data = {
             'pizza_type': 'Vegetarian',

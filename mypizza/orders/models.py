@@ -1,6 +1,12 @@
 from django.db import models
 
 class Order(models.Model):
+    """
+    Model representing a pizza order.
+
+    This model stores information about a pizza order, including
+    the type of pizza and any additional comments.
+    """
     PIZZA_CHOICES = [
         ('Hawaian', 'Hawaian'),
         ('Margherita', 'Margherita'),
