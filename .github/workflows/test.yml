@@ -3,7 +3,7 @@ name: mypizza CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,8 +16,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install django
           pip install -r requirements.txt
+        working-directory: ./mypizza
       - name: Run tests
         run: |
           python manage.py migrate
           python manage.py test
         working-directory: ./mypizza
+
+  #build:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v2
+  #    - name: Build Docker mypizza image
+  #      run: |
+  #        docker build -t k4mus/mypizza .
+  #        working-directory: ./mypizza
+  #    - name: Push Docker image
+  #      run: |
+  #        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+  #        docker push k4mus/mypizza:latest
