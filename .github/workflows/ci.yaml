@@ -25,6 +25,7 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pylint
+      working-directory: ./mypizza
 
     - name: Lint Code
       run: |
@@ -73,6 +74,7 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install bandit
+      working-directory: ./mypizza
 
     - name: Run Bandit
       run: |
